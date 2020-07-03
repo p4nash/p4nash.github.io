@@ -188,6 +188,7 @@ h2.title{
   width: 80%;
   margin-top: 10%;
   box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  transition: 0.5s;
 }
 .projects>.container>.row>.projectsDesc{
   display: block;
@@ -197,7 +198,9 @@ h2.title{
   margin-bottom: 50px;
   text-align: right;
 }
-
+a>img:hover{
+  width: 85%;
+}
 .projects>.container>.row{
   padding: 10%;
 }
