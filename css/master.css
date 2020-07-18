@@ -4,6 +4,8 @@ body{
   font-family:'Montserrat', sans-serif;
   color: white;
   letter-spacing: 2px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 .about{
   /* background-color: #280a3c; */
@@ -15,12 +17,23 @@ body{
 }
 .section{
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
 }
 .centerdiv{
   margin:0 auto;
   text-align: center;
   display: block;
+}
+.absoluteCenter{
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+#mainRow{
+  width: 80%;
 }
 h1, h2{
   background-image: linear-gradient(to left,#ff0048, #950740);
@@ -114,7 +127,7 @@ a:hover{
 .emotes, .projects{
   background-color: #280a3c;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
 }
 #martyHello{
   position: absolute;
@@ -122,7 +135,7 @@ a:hover{
   bottom: 0;
   width: 80%;
 }
-.contentLeft,.contentRight{
+.contentLeft, .contentRight{
   height: 100vh;
 }
 h2.title{
@@ -133,19 +146,21 @@ h2.title{
   text-align: right;
 }
 .emotes>.container>.row>.contentRight>.contentWrap{
-  height: 65vh;
+  /* height: 65vh;
   width: 60%;
-  position: absolute;
-  top: 20%;
-  right: 20%;
+  position: absolute; */
+  /*top: 20%;
+  right: 20%; */
+  text-align: right;
+  width: 80%!important;
 }
-.emotes>.container, .stream>.container, .projects>.container{
+.emotes>.container, .projects>.container, .stream>.container{
   padding: 0;
   margin: 0;
 }
 .emotes>.container>.row,
-.stream>.container>.row,
-.projects>.container>.row{
+.projects>.container>.row,
+.stream>.container>.row{
   width: 100vw;
 }
 .bold{
@@ -161,22 +176,49 @@ h2.title{
 .stream{
   background: url('/images/Background.png') center;
   background-size: cover;
+  width: 100vw;
+  height: 100vh;
 }
-.stream>.container>.row>.contentLeft>.contentWrap{
-  height: 65vh;
+.stream>.container{
+  /* width: 100%!important; */
+  height: 100%;
   position: absolute;
-  top: 20%;
-  left: 30%;
+  left: 50%;
+  transform: translateX(-50%);
 }
-#twitch-embed{
-  width: 20%;
+.stream>.container>.row{
+  /* width: 99%; */
+  height: 50%;
+  padding: 0;
+  margin: 0;
+}
+.video-embed{
   /* position: absolute; */
   /* top: 50%; */
-  right: 75%;
+  /* right: 75%; */
+  height: 80%;
+  width: 80%;
+  -webkit-box-shadow: 0 0 20px rgba(0,0,0,0.5);;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);;
 }
-.projects>.container{
+#stream-title-row{
+  width: 100%;
 }
-
+iframe{
+  width: 100%!important;
+  height: 100%!important;
+}
+.subtitle{
+  /* margin-top: 50px; */
+}
+.projects>.container, .stream>.container{
+  padding-top: 10%;
+  padding-bottom: 10%;
+}
+.projects>.container>.row{
+  padding-left: 30px;
+  padding-right: 30px;
+}
 .projects>.container>.row>.contentRight>.contentWrap{
   /* height: 65vh; */
   width: 60%;
@@ -190,19 +232,11 @@ h2.title{
   box-shadow: 0 0 20px rgba(0,0,0,0.5);
   transition: 0.5s;
 }
-.projects>.container>.row>.projectsDesc{
-  display: block;
-  width: 100%;
-  margin-top: 1%;
-  margin-right: 4%;
-  margin-bottom: 50px;
-  text-align: right;
+.projectsDesc{
+  text-align: center;
 }
 a>img:hover{
   width: 85%;
-}
-.projects>.container>.row{
-  padding: 10%;
 }
 .end{
   position: relative!important;
@@ -328,4 +362,25 @@ button.send-button:focus{
 .message{
   height: 2em;
   margin-left: 10px;
+}
+@media only screen and (max-width: 991px) {
+  .emotes>.container>.row>.contentRight>.contentWrap{
+    /* border: 2px solid red; */
+    text-align: left!important;
+    /* width: 20%!important; */
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .subtitle{
+    top: 40px;
+  }
+  .video-embed{
+    height: 70%;
+    width: 90%;
+  }
+
+  .stream>.container>.row{
+    height: 80%;
+  }
 }
