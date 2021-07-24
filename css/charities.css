@@ -1,0 +1,13 @@
+body{
+  background-color: black!important;
+  text-align: center;
+  padding: 20px;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  padding-top: 50px;
+}
+
+#disclaimer{
+  font-weight: 500;
+}
